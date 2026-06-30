@@ -36,23 +36,39 @@ MODEL_NAME = os.getenv("MODEL_NAME", "phi3.5-financial")
 MODELFILE = ROOT / "models" / "phi3_financial" / "Modelfile"
 
 
+def _pip_install(extra=()):
+    subprocess.check_call([
+        sys.executable, "-m", "pip", "install", "-q",
+        "fastapi", "uvicorn[standard]", "httpx", *extra,
+    ])
+
+
 def ensure_deps():
-    """Installe les dépendances manquantes."""
+    """Installe les dépendances manquantes — portable (tout pip / OS)."""
     missing = []
     for pkg in REQUIRED:
         try:
             importlib.import_module(pkg)
         except ImportError:
             missing.append(pkg)
-    if missing:
-        print(f"[setup] Installation des dépendances : {', '.join(missing)} ...")
-        subprocess.check_call([
-            sys.executable, "-m", "pip", "install", "-q",
-            "fastapi", "uvicorn[standard]", "httpx", "--break-system-packages",
-        ])
-        print("[setup] Dépendances installées.")
-    else:
+    if not missing:
         print("[setup] Dépendances déjà présentes.")
+        return
+
+    print(f"[setup] Installation des dépendances : {', '.join(missing)} ...")
+    try:
+        _pip_install()                       # cas normal (tout pip standard)
+    except subprocess.CalledProcessError:
+        # Environnement « externally-managed » (PEP 668) → flag de contournement
+        print("[setup] Nouvelle tentative avec --break-system-packages…")
+        try:
+            _pip_install(["--break-system-packages"])
+        except subprocess.CalledProcessError as e:
+            print(f"[setup] Échec de l'installation automatique ({e}).")
+            print("[setup] Installe manuellement puis relance :")
+            print("[setup]   pip install fastapi uvicorn httpx")
+            return
+    print("[setup] Dépendances installées.")
 
 
 def _ollama_exe():

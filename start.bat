@@ -17,7 +17,27 @@ echo.
 echo =====================================================
 echo.
 
-:: Lance le serveur tout-en-un (sert le site + API sur le port 8080)
-py run.py 2>nul || python run.py
+:: Verifie que Python est installe, sinon message clair
+where py >nul 2>nul
+if %errorlevel%==0 (
+    py run.py
+    goto end
+)
+where python >nul 2>nul
+if %errorlevel%==0 (
+    python run.py
+    goto end
+)
 
+echo.
+echo =====================================================
+echo   [ERREUR] Python n'est pas installe sur ce PC.
+echo.
+echo   1. Telecharge Python : https://www.python.org/downloads/
+echo   2. IMPORTANT : coche "Add Python to PATH" a l'installation
+echo   3. Relance ce start.bat
+echo =====================================================
+
+:end
+echo.
 pause

@@ -40,11 +40,15 @@ Projet Hackathon IA — TechCorp Industries.
 
 ### ⚡ Démarrage en 1 étape
 
+**Prérequis (destinataire)** : Windows + **Python 3.x** ([python.org](https://www.python.org/downloads/) — cocher *« Add Python to PATH »*). C'est tout : le reste (dépendances, **Ollama**, modèle) s'installe automatiquement au premier lancement.
+
 **Double-cliquez sur `start.bat`** (ou en ligne de commande : `python run.py`)
 
 → Le serveur s'installe, démarre, et ouvre **http://localhost:8080** automatiquement.
 
 > ✅ **Ça marche immédiatement**, même sans rien installer d'autre : un **mode démo** intégré répond aux questions financières. Dès qu'Ollama est présent, l'interface bascule toute seule sur le **vrai modèle Phi-3.5-Financial**.
+>
+> 📦 **Pour envoyer à quelqu'un** : transmettez le ZIP du projet (ou le lien GitHub). Le destinataire dézippe et double-clique `start.bat` — aucun réglage propre à votre PC n'est requis.
 
 ---
 

@@ -1,6 +1,6 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T16:08:28",
+  "generated_at": "2026-06-30T16:25:16",
   "algorithm": "sha256",
   "file_count": 37,
   "files": {
@@ -97,20 +97,20 @@
       "size": 2042
     },
     "README.md": {
-      "sha256": "060dbb93f90cb2bcaa425b78dfab0821ec897f078d75bca8500d932f31cda30d",
-      "size": 4791
+      "sha256": "6ad98bcafd37cbb3c78fde2003b4a7331cdd8f7e9354e2c4eae6a840c24f2e76",
+      "size": 5242
     },
     "RENDU.md": {
       "sha256": "1914eee3a4d69cb6b50903436a8328df6760996e870c8b462093cc09a09aa195",
       "size": 16391
     },
     "RENDU_COMPLET.md": {
-      "sha256": "d443a7fb5cc45f1769af29782789d6a5da49b3be541865e5c37e0f3dccf0e500",
-      "size": 40164
+      "sha256": "6a4a99616e4fa3b245a5ec155dc44f75beeac04fc188a29d3772d29475db5f36",
+      "size": 40619
     },
     "run.py": {
-      "sha256": "d751b64f15ff00c1983041d80db0648f43602e84245d49d2ca918042fc292e40",
-      "size": 5867
+      "sha256": "7a8ab6a116400f08d9d7a9d8d30ac0e9c024ec6b0902dc98414e990e745ad630",
+      "size": 6541
     },
     "scripts/build_rendu_doc.py": {
       "sha256": "49b3fef67875237ff9052d8254f1b6cd87e31696acb0d51f18925b75abc1dd04",
@@ -137,8 +137,8 @@
       "size": 4184
     },
     "start.bat": {
-      "sha256": "a393a1f6df3ca587c7c54db983b33bdae0fa0125e3fac709017bc4a429e0f4e2",
-      "size": 860
+      "sha256": "0c10c6fcb640e068470dc94e832a530f2c57d77d208984a101c46079fd03fdb1",
+      "size": 1338
     },
     "tritton_server/config.pbtxt": {
       "sha256": "b58714ffec5b40763f3386461118d07c4ec28837f42ba3cd336ce236e89959c4",
