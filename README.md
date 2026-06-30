@@ -3,7 +3,12 @@
 Interface de chat professionnelle pour le modèle **Phi-3.5-Financial**.
 Projet Hackathon IA — TechCorp Industries.
 
-![mode](https://img.shields.io/badge/mode-Ollama%20%7C%20Demo-blue) ![stack](https://img.shields.io/badge/stack-FastAPI%20%2B%20Ollama-6366f1)
+📦 **Dépôt : [github.com/LeDragonTuile/techcorp-ai-chat](https://github.com/LeDragonTuile/techcorp-ai-chat)**
+
+[![CI](https://github.com/LeDragonTuile/techcorp-ai-chat/actions/workflows/ci.yml/badge.svg)](https://github.com/LeDragonTuile/techcorp-ai-chat/actions/workflows/ci.yml)
+![mode](https://img.shields.io/badge/mode-Ollama%20%7C%20Demo-blue)
+![stack](https://img.shields.io/badge/stack-FastAPI%20%2B%20Ollama-6366f1)
+![python](https://img.shields.io/badge/python-3.14-3776AB)
 
 ---
 
