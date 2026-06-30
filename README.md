@@ -3,8 +3,12 @@
 Interface de chat professionnelle pour le modèle **Phi-3.5-Financial**.
 Projet Hackathon IA — TechCorp Industries.
 
+🌐 **Démo en ligne (sans installation) : [ledragontuile.github.io/techcorp-ai-chat](https://ledragontuile.github.io/techcorp-ai-chat/)**
 📦 **Dépôt : [github.com/LeDragonTuile/techcorp-ai-chat](https://github.com/LeDragonTuile/techcorp-ai-chat)**
 
+> ℹ️ La démo en ligne tourne en **mode démo** (cerveau intégré côté navigateur). Le **vrai modèle Phi-3.5** via Ollama nécessite un serveur → lance `start.bat` en local.
+
+[![Pages](https://img.shields.io/badge/demo-en%20ligne-brightgreen)](https://ledragontuile.github.io/techcorp-ai-chat/)
 [![CI](https://github.com/LeDragonTuile/techcorp-ai-chat/actions/workflows/ci.yml/badge.svg)](https://github.com/LeDragonTuile/techcorp-ai-chat/actions/workflows/ci.yml)
 ![mode](https://img.shields.io/badge/mode-Ollama%20%7C%20Demo-blue)
 ![stack](https://img.shields.io/badge/stack-FastAPI%20%2B%20Ollama-6366f1)
