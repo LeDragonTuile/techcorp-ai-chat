@@ -93,6 +93,15 @@ function apiBase() {
   if (location.protocol.startsWith('http')) return location.origin;
   return 'http://localhost:8080';
 }
+
+// Hébergement statique (GitHub Pages, fichier local) : pas de backend
+// → on bascule directement sur le cerveau démo intégré (aucune install).
+function isStaticHost() {
+  return location.protocol === 'file:'
+    || /\.github\.io$/.test(location.hostname)
+    || /\.pages\.dev$/.test(location.hostname)
+    || /\.netlify\.app$/.test(location.hostname);
+}
 function authHeaders() {
   const h = { 'Content-Type': 'application/json' };
   if (CONFIG.apiKey) h['X-API-Key'] = CONFIG.apiKey;
@@ -111,6 +120,11 @@ async function updateStatus() {
   const dot = document.getElementById('statusDot');
   const txt = document.getElementById('statusText');
   const badge = document.getElementById('modeBadge');
+  if (isStaticHost()) {
+    dot.className = 'dot demo'; txt.textContent = t('status_local');
+    badge.className = 'mode-badge demo'; badge.textContent = t('mode_local');
+    return;
+  }
   try {
     const r = await fetch(`${apiBase()}/health`, { signal: AbortSignal.timeout(4000) });
     const d = await r.json();
@@ -234,6 +248,7 @@ async function stream() {
   let full = '', aborted = false;
 
   try {
+    if (isStaticHost()) throw new Error('static-host');   // pas de backend → démo navigateur
     const res = await fetch(`${apiBase()}/v1/chat`, {
       method: 'POST', headers: authHeaders(), signal: controller.signal,
       body: JSON.stringify({

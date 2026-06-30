@@ -1,8 +1,8 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T15:28:14",
+  "generated_at": "2026-06-30T15:45:55",
   "algorithm": "sha256",
-  "file_count": 34,
+  "file_count": 35,
   "files": {
     ".dockerignore": {
       "sha256": "82f426781157b019986d260daecea49dccb196f2710f953d965ef271cf777862",
@@ -11,6 +11,10 @@
     ".github/workflows/ci.yml": {
       "sha256": "432db9324458ff6971aa62cb2a9ce34e98f8ea1c7dbc84f7a0001caff51ddfd7",
       "size": 893
+    },
+    ".github/workflows/pages.yml": {
+      "sha256": "19abf232f0badcea9a40b73b9be54c547e3759d0f7f4f91b1b7c4f1f0181ac4f",
+      "size": 898
     },
     ".gitignore": {
       "sha256": "98be6664fc4402a4c6b3a1cd81ab0a7e18a5c4024115ff74c1337b6e07fc4e5d",
@@ -69,8 +73,8 @@
       "size": 7329
     },
     "frontend/app.js": {
-      "sha256": "271a9cc4c1dad6b6d0414bbbdaa325485e1be9e11e0741f3b7a47affe2913836",
-      "size": 26540
+      "sha256": "fbae9e45e69fa1599b5cff705718d490e57556ba81890dadf70fc4d325e4d6c8",
+      "size": 27187
     },
     "frontend/index.html": {
       "sha256": "6131def357550f43288536bfa6faac0c06a7ff01a4f20719be3061b3fa385c5c",
