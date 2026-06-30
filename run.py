@@ -33,7 +33,7 @@ def ensure_deps():
         print(f"[setup] Installation des dépendances : {', '.join(missing)} ...")
         subprocess.check_call([
             sys.executable, "-m", "pip", "install", "-q",
-            "fastapi", "uvicorn[standard]", "httpx",
+            "fastapi", "uvicorn[standard]", "httpx", "--break-system-packages",
         ])
         print("[setup] Dépendances installées.")
     else:
