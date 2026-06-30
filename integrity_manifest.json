@@ -1,6 +1,6 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T14:02:48",
+  "generated_at": "2026-06-30T14:21:56",
   "algorithm": "sha256",
   "file_count": 32,
   "files": {
@@ -105,8 +105,8 @@
       "size": 6601
     },
     "scripts/security_audit.py": {
-      "sha256": "ac4dc630b4ec6ad233ff7a58072bcf616daba082d8c73e30b6d7423c1171a08e",
-      "size": 8629
+      "sha256": "b5fb2948b52c58ba380ea529823e01ea238a55780ace365f384a7bdca274639e",
+      "size": 9281
     },
     "scripts/setup.bat": {
       "sha256": "66c61b6c31ba3d6cf2e3601c196da0b5bb6ab79baf97fe8100c63c74cab64a2a",
