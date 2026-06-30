@@ -40,7 +40,7 @@ IGNORE_FILES = {
     "model_performance_report.json",
     "evaluation_results.json",
 }
-IGNORE_SUFFIXES = {".pyc", ".pyo", ".safetensors", ".bin", ".log"}
+IGNORE_SUFFIXES = {".pyc", ".pyo", ".safetensors", ".bin", ".log", ".docx"}
 IGNORE_PATH_PARTS = {"medical_model_lora", "output"}
 
 

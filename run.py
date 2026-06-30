@@ -74,6 +74,21 @@ def _ollama_tags():
         return False, []
 
 
+def _install_ollama():
+    """Installe Ollama automatiquement via winget (Windows). Retourne le chemin de l'exe."""
+    print("[ollama] non installé — installation automatique via winget (~700 Mo, 1re fois)…")
+    try:
+        subprocess.run([
+            "winget", "install", "--id", "Ollama.Ollama", "-e", "--silent",
+            "--accept-source-agreements", "--accept-package-agreements",
+        ])
+    except FileNotFoundError:
+        print("[ollama] winget introuvable sur ce système.")
+    except Exception as e:
+        print(f"[ollama] échec de l'installation winget : {e}")
+    return _ollama_exe()
+
+
 def ensure_ollama():
     """Active automatiquement le vrai modèle Phi-3.5-Financial.
 
@@ -87,8 +102,10 @@ def ensure_ollama():
     try:
         exe = _ollama_exe()
         if not exe:
-            print("[ollama] non installé → mode démo.")
-            print("[ollama] Pour le vrai modèle : scripts\\install_ollama.ps1")
+            exe = _install_ollama()        # installation automatique
+        if not exe:
+            print("[ollama] installation impossible → mode démo (interface fonctionnelle).")
+            print("[ollama] Sinon installe manuellement : https://ollama.com/download")
             return
 
         up, models = _ollama_tags()

@@ -1,8 +1,8 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T15:54:19",
+  "generated_at": "2026-06-30T16:08:28",
   "algorithm": "sha256",
-  "file_count": 35,
+  "file_count": 37,
   "files": {
     ".dockerignore": {
       "sha256": "82f426781157b019986d260daecea49dccb196f2710f953d965ef271cf777862",
@@ -104,17 +104,25 @@
       "sha256": "1914eee3a4d69cb6b50903436a8328df6760996e870c8b462093cc09a09aa195",
       "size": 16391
     },
+    "RENDU_COMPLET.md": {
+      "sha256": "d443a7fb5cc45f1769af29782789d6a5da49b3be541865e5c37e0f3dccf0e500",
+      "size": 40164
+    },
     "run.py": {
-      "sha256": "af4d71f48ce2ccc41b56837b5be6cc14d7f104c0fc5db2f82d9ec0a8f3e669c6",
-      "size": 5097
+      "sha256": "d751b64f15ff00c1983041d80db0648f43602e84245d49d2ca918042fc292e40",
+      "size": 5867
+    },
+    "scripts/build_rendu_doc.py": {
+      "sha256": "49b3fef67875237ff9052d8254f1b6cd87e31696acb0d51f18925b75abc1dd04",
+      "size": 3058
     },
     "scripts/install_ollama.ps1": {
       "sha256": "f752890a1346ba519d2774b48ec60fba8e3b7bdf7b51bcda797d6cbffd9f054d",
       "size": 1982
     },
     "scripts/integrity_check.py": {
-      "sha256": "5463e806305d940e57a28fa71e1f7a506d84ad563bb04bfe170992d5171a7934",
-      "size": 6601
+      "sha256": "a4fd0ecd38950ea6fb21c3580c947c86cfaffcab2fe7760554b7c33b8bf4e5fc",
+      "size": 6610
     },
     "scripts/security_audit.py": {
       "sha256": "b5fb2948b52c58ba380ea529823e01ea238a55780ace365f384a7bdca274639e",
@@ -129,8 +137,8 @@
       "size": 4184
     },
     "start.bat": {
-      "sha256": "ab4d1fcff1ac86a90ca7b1c9640c8ef72a06c5b3cc683d9b8a7851f29c64af1d",
-      "size": 766
+      "sha256": "a393a1f6df3ca587c7c54db983b33bdae0fa0125e3fac709017bc4a429e0f4e2",
+      "size": 860
     },
     "tritton_server/config.pbtxt": {
       "sha256": "b58714ffec5b40763f3386461118d07c4ec28837f42ba3cd336ce236e89959c4",
