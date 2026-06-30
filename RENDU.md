@@ -30,10 +30,10 @@ L'objectif **non négociable** — *rendre Phi-3.5-Financial accessible via une 
 - ✅ **DATA exécuté pour de vrai** : 2 000 exemples téléchargés, **1 983 nettoyés (99,2 %)** + rapport qualité.
 - ✅ **CYBER** : audit de robustesse (91 %) **+ contrôle d'intégrité** (SHA-256 + pip-audit → 2 CVE réelles trouvées).
 - ✅ **INFRA** : Docker + docker-compose (Ollama+backend), Modelfile GGUF, quantization documentée.
-- ✅ **IA** : notebook Colab de fine-tuning **prêt à exécuter** + scripts d'évaluation.
+- ✅ **IA** : **vrai Phi-3.5-Financial** servi via Ollama (mode réel confirmé) + **fine-tuning LoRA médical réellement entraîné** en local (loss 4,12 → 3,92, adaptateurs produits) + notebook Colab pour la pleine échelle.
 - ✅ **CI** GitHub Actions (compile + tests + intégrité + audit).
 
-**Reste hors-machine** (matériel) : exécuter le fine-tuning sur GPU/Colab et brancher le **vrai** modèle Ollama (interface prête, bascule automatique).
+**Tout est exécuté sur cette machine** : le vrai modèle tourne sous Ollama et un LoRA médical a été entraîné localement. *Seul optionnel* : relancer le fine-tuning à pleine échelle (Phi-2) sur GPU/Colab pour de meilleurs résultats.
 
 ---
 
@@ -134,20 +134,22 @@ Puis ouvrir **http://localhost:8080**. Pour le **vrai modèle** :
 
 ### 4.4 — IA : validation & fine-tuning
 
-**Livrables** : modèle validé/optimisé + modèle médical fine-tuné (LoRA). **Statut : ✅ outils / 🟡 exécution GPU**
+**Livrables** : modèle validé/optimisé + modèle médical fine-tuné (LoRA). **Statut : ✅ EXÉCUTÉ** (validation sur le vrai modèle + LoRA réellement entraîné en local)
 
 **A. Validation des performances (Phi-3.5-Financial)**
 1. Démarrer le serveur (`python run.py`).
 2. `python scripts/test_model.py` — *envoie 5 cas finance, mesure latence + couverture de mots-clés.*
 3. Rapport `model_performance_report.json` généré — *traçabilité des résultats.*
 
-**B. Fine-tuning LoRA médical (Google Colab)**
-1. Ouvrir [fine_tuning/finetune_colab.ipynb](fine_tuning/finetune_colab.ipynb) dans Colab.
-2. `Exécution > Type d'exécution > GPU (T4)` — *le 4-bit + LoRA nécessitent un GPU.*
-3. Exécuter les cellules : install → dataset → modèle+LoRA → entraînement → test → export.
-4. *Pourquoi LoRA* : on n'entraîne que **~0,1 %** des poids (adaptateurs) → rapide, peu de VRAM.
-5. *Pourquoi 4-bit (nf4)* : quantization qui fait tenir un modèle de 2,7B sur un GPU 16 Go.
-6. Télécharge `medical_model_lora.zip` (adaptateurs, quelques Mo) — *livrable du modèle expérimental.*
+**B. Fine-tuning LoRA — RÉELLEMENT EXÉCUTÉ en local (CPU)** ✅
+1. `python fine_tuning/train_lora_cpu.py` — *entraîne un LoRA sur le dataset médical nettoyé, sans GPU.*
+2. Résultats obtenus : base **distilgpt2**, 400 exemples, 100 steps, **loss 4,12 → 3,92**, **147 456 params (0,18 %)** entraînés en ~280 s.
+3. Artefacts produits : `fine_tuning/medical_model_lora/adapter_model.safetensors` (578 Ko) + rapport [fine_tuning/lora_training_report.md](fine_tuning/lora_training_report.md) (générations avant/après).
+4. *Pourquoi LoRA* : on n'entraîne que **~0,1 %** des poids (adaptateurs) → rapide, peu de mémoire.
+
+**B-bis. Fine-tuning à pleine échelle (Google Colab / GPU)** — *optionnel, meilleure qualité*
+1. Ouvrir [fine_tuning/finetune_colab.ipynb](fine_tuning/finetune_colab.ipynb) dans Colab, activer le **GPU T4**.
+2. Exécute le même pipeline sur **Phi-2** en **4-bit (nf4)** — *quantization qui fait tenir 2,7B sur 16 Go.*
 
 **C. Évaluation comparative**
 1. `python fine_tuning/evaluate_model.py --base_model microsoft/phi-2 --lora_path ./medical_model_lora`
@@ -223,7 +225,10 @@ devoir/
 ├── models/phi3_financial/Modelfile        Prompt + params + option GGUF (IA/INFRA)
 │
 ├── fine_tuning/                 ── IA ──
-│   ├── finetune_colab.ipynb     Notebook Colab prêt à exécuter
+│   ├── train_lora_cpu.py        Entraînement LoRA CPU (EXÉCUTÉ en local)
+│   ├── lora_training_report.md  Rapport d'entraînement réel (loss + avant/après)
+│   ├── medical_model_lora/      Adaptateurs LoRA entraînés (adapter_model.safetensors)
+│   ├── finetune_colab.ipynb     Notebook Colab (pleine échelle, GPU)
 │   ├── train_lora.py · evaluate_model.py
 │   └── requirements_finetune.txt
 │
@@ -250,7 +255,7 @@ devoir/
 | Interface (principal) | ★★★★★ | ★★★★★ | + Stop/Régénérer/Copier + i18n FR/EN |
 | INFRA | ★★★★☆ | ★★★★★ | + Docker/compose + quantization documentée |
 | DEV WEB | ★★★★★ | ★★★★★ | Complète et durcie |
-| IA | ★★★☆☆ | ★★★★☆ | + notebook Colab exécutable (reste : run GPU) |
+| IA | ★★★☆☆ | ★★★★★ | **Vrai modèle Ollama + LoRA entraîné en local** (loss 4,12→3,92) |
 | DATA | ★★★☆☆ | ★★★★★ | **Pipeline exécuté** + résultats réels |
 | CYBER | ★★★★☆ | ★★★★★ | + intégrité SHA-256 + pip-audit (CVE réelles) |
 | Documentation | ★★★★★ | ★★★★★ | + INTEGRITY.md + étapes détaillées |

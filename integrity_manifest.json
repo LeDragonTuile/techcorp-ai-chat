@@ -1,8 +1,8 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T14:21:56",
+  "generated_at": "2026-06-30T14:37:34",
   "algorithm": "sha256",
-  "file_count": 32,
+  "file_count": 34,
   "files": {
     ".dockerignore": {
       "sha256": "82f426781157b019986d260daecea49dccb196f2710f953d965ef271cf777862",
@@ -52,6 +52,10 @@
       "sha256": "fd01199d1c02b9c9bd52a6258ae2b265038a3ebff49800c52f9d9ff7dc16f33f",
       "size": 7171
     },
+    "fine_tuning/lora_training_report.md": {
+      "sha256": "bcdded8070583c5679ffd4a55bd6da953e3a6d034cbf47e10037c31e7dc1d0d9",
+      "size": 2282
+    },
     "fine_tuning/requirements_finetune.txt": {
       "sha256": "2e3890bbbbec4fed1e912755170bd8e2c2b8a23961bd447b822f1e9de8e01214",
       "size": 294
@@ -59,6 +63,10 @@
     "fine_tuning/train_lora.py": {
       "sha256": "50d0e77cdce27fb75007d70a6593033a26ee0e350b0305f900ba92422156ea00",
       "size": 8692
+    },
+    "fine_tuning/train_lora_cpu.py": {
+      "sha256": "18c4be794c9dad84e1fb10d313465361e150472eac8b68409ee47f2952ecbb3e",
+      "size": 7329
     },
     "frontend/app.js": {
       "sha256": "271a9cc4c1dad6b6d0414bbbdaa325485e1be9e11e0741f3b7a47affe2913836",
@@ -85,12 +93,12 @@
       "size": 2042
     },
     "README.md": {
-      "sha256": "38eea3bd03698910959b0abf4b33978f928e2ca231818562d357234ca407bb78",
-      "size": 3993
+      "sha256": "ca03196de634cc73fabab26f951a56510a5d1791a468c3b2b4b1be4084f5ea8a",
+      "size": 4002
     },
     "RENDU.md": {
-      "sha256": "20e421fc7b060181fe6957bbbf0bb9bb82827799fa3d45b14887b3dbb28e1600",
-      "size": 15483
+      "sha256": "1914eee3a4d69cb6b50903436a8328df6760996e870c8b462093cc09a09aa195",
+      "size": 16391
     },
     "run.py": {
       "sha256": "a48d11cbe4df2da458062f96a504e1999058f80b591e3ad319d556b73c5791b8",

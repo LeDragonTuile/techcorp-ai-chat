@@ -101,8 +101,8 @@ python scripts/integrity_check.py --all # Intégrité + pip-audit (CYBER)
 
 ```bash
 python medical_dataset/prepare_dataset.py --all     # DATA (exécuté : 1983 ex. nettoyés)
-# Fine-tuning : ouvrir fine_tuning/finetune_colab.ipynb dans Google Colab (GPU)
-python fine_tuning/evaluate_model.py                # Comparaison base vs fine-tuné
+python fine_tuning/train_lora_cpu.py                # LoRA RÉELLEMENT entraîné en local (CPU)
+# Pleine échelle (GPU) : fine_tuning/finetune_colab.ipynb dans Google Colab
 ```
 
 ## 📖 Documentation
