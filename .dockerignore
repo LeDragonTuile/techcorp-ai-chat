@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.git/
+.venv/
+venv/
+.pytest_cache/
+*.log
+fine_tuning/medical_model_lora/
+medical_dataset/medical_dataset_raw.json
+medical_dataset/medical_dataset_clean.json
+medical_dataset/medical_dataset_training.json
+*_report.json
+integrity_manifest.json
+.claude/
+docs/
+*.md

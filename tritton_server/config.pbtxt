@@ -1,0 +1,40 @@
+name: "phi3_financial"
+backend: "python"
+max_batch_size: 8
+dynamic_batching {
+  preferred_batch_size: [ 1, 2, 4 ]
+  max_queue_delay_microseconds: 100000
+}
+
+input [
+  {
+    name: "INPUT_TEXT"
+    data_type: TYPE_STRING
+    dims: [ -1 ]
+  }
+]
+
+output [
+  {
+    name: "OUTPUT_TEXT"
+    data_type: TYPE_STRING
+    dims: [ -1 ]
+  }
+]
+
+instance_group [
+  {
+    kind: KIND_CPU
+    count: 1
+  }
+]
+
+parameters {
+  key: "max_tokens"
+  value { string_value: "2048" }
+}
+
+parameters {
+  key: "temperature"
+  value { string_value: "0.7" }
+}

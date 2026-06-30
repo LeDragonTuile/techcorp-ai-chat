@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+          pip install pytest pip-audit
+
+      - name: Syntax check (compileall)
+        run: python -m compileall backend scripts fine_tuning medical_dataset run.py
+
+      - name: Backend tests (pytest)
+        run: python -m pytest backend -v
+
+      - name: Integrity tool smoke test
+        run: python scripts/integrity_check.py --generate
+
+      - name: Dependency audit (non-blocking)
+        continue-on-error: true
+        run: python scripts/integrity_check.py --audit

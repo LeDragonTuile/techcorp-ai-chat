@@ -1,0 +1,136 @@
+{
+  "project": "techcorp-ai-chat",
+  "generated_at": "2026-06-30T14:02:48",
+  "algorithm": "sha256",
+  "file_count": 32,
+  "files": {
+    ".dockerignore": {
+      "sha256": "82f426781157b019986d260daecea49dccb196f2710f953d965ef271cf777862",
+      "size": 279
+    },
+    ".github/workflows/ci.yml": {
+      "sha256": "432db9324458ff6971aa62cb2a9ce34e98f8ea1c7dbc84f7a0001caff51ddfd7",
+      "size": 893
+    },
+    ".gitignore": {
+      "sha256": "98be6664fc4402a4c6b3a1cd81ab0a7e18a5c4024115ff74c1337b6e07fc4e5d",
+      "size": 793
+    },
+    "backend/demo_brain.py": {
+      "sha256": "82e4878cb16487ddbf8e6a9665095cfd9647a56b29b58f6d22248094e31b26d3",
+      "size": 10704
+    },
+    "backend/main.py": {
+      "sha256": "103b46c43187da13e4db3c015ea4ee1c24f8936a80fc36ff3b97f7c534aa46cb",
+      "size": 10950
+    },
+    "backend/requirements.txt": {
+      "sha256": "4d502daf58a0309d9fd0c82787306b4b2e019486c386a985955dbbf8877feba7",
+      "size": 97
+    },
+    "backend/test_backend.py": {
+      "sha256": "965deee656db841549704c5502453d4277718bdddf29ae4a68b4080d31c9a379",
+      "size": 3693
+    },
+    "docker-compose.yml": {
+      "sha256": "d2d1c4d7bca15953980b479df42b974e3b7a3e8cec5d71a4e3a4b08a01558ce1",
+      "size": 1192
+    },
+    "Dockerfile": {
+      "sha256": "872c12a4d0aca6b772e67ebd3e0ac4266d3b8bf1ddf650c9a572476ad56b4c61",
+      "size": 916
+    },
+    "docs/DEPLOYMENT.md": {
+      "sha256": "4bb472bc2d2a6a87d9a53a4764ad8239715bbb755033959b2d218153c8ca9004",
+      "size": 9038
+    },
+    "fine_tuning/evaluate_model.py": {
+      "sha256": "b2d7b7d1724bfd0e896dbc16e9513adb6d59f6815ff33d389e4b142ff3a3c0cf",
+      "size": 6034
+    },
+    "fine_tuning/finetune_colab.ipynb": {
+      "sha256": "fd01199d1c02b9c9bd52a6258ae2b265038a3ebff49800c52f9d9ff7dc16f33f",
+      "size": 7171
+    },
+    "fine_tuning/requirements_finetune.txt": {
+      "sha256": "2e3890bbbbec4fed1e912755170bd8e2c2b8a23961bd447b822f1e9de8e01214",
+      "size": 294
+    },
+    "fine_tuning/train_lora.py": {
+      "sha256": "50d0e77cdce27fb75007d70a6593033a26ee0e350b0305f900ba92422156ea00",
+      "size": 8692
+    },
+    "frontend/app.js": {
+      "sha256": "271a9cc4c1dad6b6d0414bbbdaa325485e1be9e11e0741f3b7a47affe2913836",
+      "size": 26540
+    },
+    "frontend/index.html": {
+      "sha256": "6131def357550f43288536bfa6faac0c06a7ff01a4f20719be3061b3fa385c5c",
+      "size": 11160
+    },
+    "frontend/style.css": {
+      "sha256": "a8c23d4c001f4fabe3f3ed0d4ca9d322067e104e04818a5c820402544e4fa408",
+      "size": 19774
+    },
+    "INTEGRITY.md": {
+      "sha256": "1c0f350c785a206f3fd07a4c9b2b219878be4ca7b682ab5d063cc2c0b24870c9",
+      "size": 5095
+    },
+    "medical_dataset/prepare_dataset.py": {
+      "sha256": "7b2866a54717dd9044d21679be97893a5ee6d34b3354c7d21472c952aefd68d1",
+      "size": 10289
+    },
+    "models/phi3_financial/Modelfile": {
+      "sha256": "e4e35aec4100231be44c9b8b7e64c95dd548313fc02a58f001835fa21da73bd8",
+      "size": 2042
+    },
+    "README.md": {
+      "sha256": "38eea3bd03698910959b0abf4b33978f928e2ca231818562d357234ca407bb78",
+      "size": 3993
+    },
+    "RENDU.md": {
+      "sha256": "20e421fc7b060181fe6957bbbf0bb9bb82827799fa3d45b14887b3dbb28e1600",
+      "size": 15483
+    },
+    "run.py": {
+      "sha256": "a48d11cbe4df2da458062f96a504e1999058f80b591e3ad319d556b73c5791b8",
+      "size": 1914
+    },
+    "scripts/install_ollama.ps1": {
+      "sha256": "f752890a1346ba519d2774b48ec60fba8e3b7bdf7b51bcda797d6cbffd9f054d",
+      "size": 1982
+    },
+    "scripts/integrity_check.py": {
+      "sha256": "5463e806305d940e57a28fa71e1f7a506d84ad563bb04bfe170992d5171a7934",
+      "size": 6601
+    },
+    "scripts/security_audit.py": {
+      "sha256": "ac4dc630b4ec6ad233ff7a58072bcf616daba082d8c73e30b6d7423c1171a08e",
+      "size": 8629
+    },
+    "scripts/setup.bat": {
+      "sha256": "66c61b6c31ba3d6cf2e3601c196da0b5bb6ab79baf97fe8100c63c74cab64a2a",
+      "size": 1877
+    },
+    "scripts/test_model.py": {
+      "sha256": "33d185e6170b93c1beaf6e7b0901d375961a89ed843fb42b775dcbc126a1ddad",
+      "size": 4184
+    },
+    "start.bat": {
+      "sha256": "14697eed4a13073a79de840d1e5113b45695063e96ee7cf2d2da6916ab66fe0d",
+      "size": 647
+    },
+    "tritton_server/config.pbtxt": {
+      "sha256": "b58714ffec5b40763f3386461118d07c4ec28837f42ba3cd336ce236e89959c4",
+      "size": 527
+    },
+    "tritton_server/model_repository/phi3_financial/1/model.py": {
+      "sha256": "9a2b8c95842092d9f1a0485d47f582d15d7c03055741d0c9e023e80b2568644a",
+      "size": 2170
+    },
+    "tritton_server/README.md": {
+      "sha256": "ae4d4541a4e4faa5f2585ae51d95c7e2b1f4a843545c0007f2c2be4ae5c4268a",
+      "size": 1467
+    }
+  }
+}

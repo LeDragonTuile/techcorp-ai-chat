@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Rapports générés
+security_audit_report.json
+model_performance_report.json
+evaluation_results.json
+
+# Datasets téléchargés / nettoyés (volumineux) — reproductibles via prepare_dataset.py
+medical_dataset/medical_dataset_raw.json
+medical_dataset/medical_dataset_clean.json
+medical_dataset/medical_dataset_training.json
+# NB : on GARDE le rapport qualité et l'échantillon (livrables légers, versionnés) :
+#   medical_dataset/medical_dataset_clean_report.txt
+#   medical_dataset/medical_dataset_sample.json
+
+# Sorties de fine-tuning
+fine_tuning/medical_model_lora/
+fine_tuning/output/
+*.safetensors
+*.bin
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Verrou runtime des tâches planifiées
+.claude/scheduled_tasks.lock
