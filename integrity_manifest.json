@@ -1,6 +1,6 @@
 {
   "project": "techcorp-ai-chat",
-  "generated_at": "2026-06-30T14:50:03",
+  "generated_at": "2026-06-30T15:28:14",
   "algorithm": "sha256",
   "file_count": 34,
   "files": {
@@ -101,8 +101,8 @@
       "size": 16391
     },
     "run.py": {
-      "sha256": "a48d11cbe4df2da458062f96a504e1999058f80b591e3ad319d556b73c5791b8",
-      "size": 1914
+      "sha256": "af4d71f48ce2ccc41b56837b5be6cc14d7f104c0fc5db2f82d9ec0a8f3e669c6",
+      "size": 5097
     },
     "scripts/install_ollama.ps1": {
       "sha256": "f752890a1346ba519d2774b48ec60fba8e3b7bdf7b51bcda797d6cbffd9f054d",
@@ -125,8 +125,8 @@
       "size": 4184
     },
     "start.bat": {
-      "sha256": "14697eed4a13073a79de840d1e5113b45695063e96ee7cf2d2da6916ab66fe0d",
-      "size": 647
+      "sha256": "ab4d1fcff1ac86a90ca7b1c9640c8ef72a06c5b3cc683d9b8a7851f29c64af1d",
+      "size": 766
     },
     "tritton_server/config.pbtxt": {
       "sha256": "b58714ffec5b40763f3386461118d07c4ec28837f42ba3cd336ce236e89959c4",
